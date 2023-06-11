@@ -79,3 +79,211 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def test_weather_data
+ {
+    current_weather: {
+      last_updated: '2023-06-10 17:30',
+      temperature: 71.6,
+      feels_like: 75.4,
+      humidity: 41,
+      uvi: 5.0,
+      visibility: 39.0,
+      condition: 'Partly cloudy',
+      icon: '//cdn.weatherapi.com/weather/64x64/day/116.png'
+    },
+    daily_weather: [
+      {
+        date: '2023-06-10',
+        sunrise: '05:32 AM',
+        sunset: '08:28 PM',
+        max_temp: 72.9,
+        min_temp: 51.4,
+        condition: 'Moderate rain',
+        icon: '//cdn.weatherapi.com/weather/64x64/day/302.png'
+      },
+      {
+        date: '2023-06-10',
+        sunrise: '05:32 AM',
+        sunset: '08:28 PM',
+        max_temp: 72.9,
+        min_temp: 51.4,
+        condition: 'Moderate rain',
+        icon: '//cdn.weatherapi.com/weather/64x64/day/302.png'
+      },
+      {
+        date: '2023-06-10',
+        sunrise: '05:32 AM',
+        sunset: '08:28 PM',
+        max_temp: 72.9,
+        min_temp: 51.4,
+        condition: 'Moderate rain',
+        icon: '//cdn.weatherapi.com/weather/64x64/day/302.png'
+      },
+      {
+        date: '2023-06-10',
+        sunrise: '05:32 AM',
+        sunset: '08:28 PM',
+        max_temp: 72.9,
+        min_temp: 51.4,
+        condition: 'Moderate rain',
+        icon: '//cdn.weatherapi.com/weather/64x64/day/302.png'
+      },
+      {
+        date: '2023-06-10',
+        sunrise: '05:32 AM',
+        sunset: '08:28 PM',
+        max_temp: 72.9,
+        min_temp: 51.4,
+        condition: 'Moderate rain',
+        icon: '//cdn.weatherapi.com/weather/64x64/day/302.png'
+      }
+    ],
+    hourly_weather: [
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      },
+      {
+        time: '2023-06-10 00:00',
+        temperature: 55.2,
+        conditions: 'Patchy rain possible',
+        icon: '//cdn.weatherapi.com/weather/64x64/night/176.png'
+      }
+    ]
+  }
+end
