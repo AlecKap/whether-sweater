@@ -1,4 +1,4 @@
-class WeatherApiService
+class ForecastApiService
   def get_forecast(lat_long)
     get_url("/v1/forecast.json?q=#{lat_long}&days=6")
   end

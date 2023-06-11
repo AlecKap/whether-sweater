@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe Weather do
+RSpec.describe Forecast do
   it 'exists and has attributes' do
-    test_weather_data
-    weather = Weather.new(test_weather_data)
+    test_forecast_data
+    forecast = Forecast.new(test_forecast_data)
 
-    expect(weather).to be_a(Weather)
-    expect(weather.current_weeather).to be_a(Hash)
-    expect(weather.daily_weather).to be_an(Array)
-    expect(weather.hourly_weather).to be_an(Array)
-    expect(weather.daily_weather.count).to eq(5)
-    expect(weather.hourly_weather.count).to eq(24)
+    expect(forecast).to be_a(Forecast)
+    expect(forecast.current_weather).to be_a(Hash)
+    expect(forecast.daily_weather).to be_an(Array)
+    expect(forecast.hourly_weather).to be_an(Array)
+    expect(forecast.daily_weather.count).to eq(5)
+    expect(forecast.hourly_weather.count).to eq(24)
+    expect(forecast.id).to eq(nil)
   end
 end

@@ -80,7 +80,7 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-def test_weather_data
+def test_forecast_data
  {
     current_weather: {
       last_updated: '2023-06-10 17:30',

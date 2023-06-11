@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe WeatherApiService do
+RSpec.describe ForecastApiService do
   describe 'instance methods' do
     describe '#get_forecast' do
       it 'returns forecast data for a given lat and long', :vcr do
         lat_long = '39.4389,-108.0647'
-        results = WeatherApiService.new.get_forecast(lat_long)
+        results = ForecastApiService.new.get_forecast(lat_long)
 
         expect(results).to be_a(Hash)
         expect(results).to have_key(:current)
@@ -80,7 +80,7 @@ RSpec.describe WeatherApiService do
 
       it 'does not return unnecessary data', :vcr do
         lat_long = '39.4389,-108.0647'
-        results = WeatherApiService.new.get_forecast(lat_long)
+        results = ForecastApiService.new.get_forecast(lat_long)
 
         expect(results).to be_a(Hash)
         expect(results[:forecast][:forecastday]).to be_an(Array)
