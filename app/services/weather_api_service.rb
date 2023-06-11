@@ -1,6 +1,6 @@
 class WeatherApiService
-  def get_forecast(lat, long)
-    get_url("/v1/forecast.json?q=#{lat},#{long}&days=5")
+  def get_forecast(lat_long)
+    get_url("/v1/forecast.json?q=#{lat_long}&days=6")
   end
 
   def conn

@@ -4,9 +4,8 @@ RSpec.describe WeatherApiService do
   describe 'instance methods' do
     describe '#get_forecast' do
       it 'returns forecast data for a given lat and long', :vcr do
-        lat = 39.4389
-        long = -108.0647
-        results = WeatherApiService.new.get_forecast(lat, long)
+        lat_long = '39.4389,-108.0647'
+        results = WeatherApiService.new.get_forecast(lat_long)
 
         expect(results).to be_a(Hash)
         expect(results).to have_key(:current)
@@ -40,7 +39,7 @@ RSpec.describe WeatherApiService do
 
         forecastday = forecast[:forecastday]
         expect(forecastday).to be_an(Array)
-        expect(forecastday.count).to eq(5)
+        expect(forecastday.count).to eq(6)
         expect(forecastday[0]).to have_key(:date)
         expect(forecastday[0][:date]).to be_a(String)
         expect(forecastday[0]).to have_key(:day)
@@ -80,9 +79,8 @@ RSpec.describe WeatherApiService do
       end
 
       it 'does not return unnecessary data', :vcr do
-        lat = 39.4389
-        long = -108.0647
-        results = WeatherApiService.new.get_forecast(lat, long)
+        lat_long = '39.4389,-108.0647'
+        results = WeatherApiService.new.get_forecast(lat_long)
 
         expect(results).to be_a(Hash)
         expect(results[:forecast][:forecastday]).to be_an(Array)
