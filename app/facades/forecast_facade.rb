@@ -1,10 +1,10 @@
-class WeatherFacade
+class ForecastFacade
   def initialize(location)
     @location = location
   end
 
-  def weather_forecast
-    Weather.new(all_weather_data)
+  def forecast
+    Forecast.new(all_weather_data)
   end
 
   def all_weather_data
@@ -45,7 +45,7 @@ class WeatherFacade
   def hourly_weather_data
     weather_data(lat_long)[:forecast][:forecastday][0][:hour].map do |day|
       {
-        time: day[:time],
+        time: day[:time][-5..-1],
         temperature: day[:temp_f],
         conditions: day[:condition][:text],
         icon: day[:condition][:icon]
@@ -64,7 +64,7 @@ class WeatherFacade
   end
 
   def weather_service
-    @_weather_service ||= WeatherApiService.new
+    @_weather_service ||= ForecastApiService.new
   end
 
   def weather_data(lat_long)

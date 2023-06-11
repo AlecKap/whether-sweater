@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe WeatherFacade do
+RSpec.describe ForecastFacade do
   describe 'instance methods' do
     before :each do
-      @facade = WeatherFacade.new('broomfield,co')
+      @facade = ForecastFacade.new('broomfield,co')
     end
 
-    describe 'weather_forecast' do
-      it 'returns a Weather object with the weather details for a given location', :vcr do
-        expect(@facade.weather_forecast).to be_a(Weather)
+    describe 'forecast' do
+      it 'returns a Forecast object with the weather details for a given location', :vcr do
+        expect(@facade.forecast).to be_a(Forecast)
       end
     end
 
@@ -73,6 +73,7 @@ RSpec.describe WeatherFacade do
           expect(hour).to be_a(Hash)
           expect(hour).to have_key(:time)
           expect(hour[:time]).to be_a(String)
+          expect(hour[:time].length).to eq(5)
           expect(hour).to have_key(:temperature)
           expect(hour[:temperature]).to be_a(Float)
           expect(hour).to have_key(:conditions)
