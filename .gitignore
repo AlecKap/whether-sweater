@@ -30,3 +30,9 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore fixture files
+/spec/fixtures/
+
+# Ignore SimpleCov coverage files
+/coverage/
