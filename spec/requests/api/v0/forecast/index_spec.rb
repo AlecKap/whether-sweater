@@ -18,6 +18,9 @@ RSpec.describe 'Forecast Request' do
       expect(data[:data][:type]).to eq('forecast')
       expect(data[:data]).to have_key(:attributes)
 
+      expect(data[:data]).to_not have_key(:location)
+      expect(data[:data]).to_not have_key(:forecast)
+
       attrs = data[:data][:attributes]
 
       expect(attrs).to be_a(Hash)
@@ -39,6 +42,8 @@ RSpec.describe 'Forecast Request' do
       expect(attrs[:current_weather][:visibility]).to be_a(Float)
       expect(attrs[:current_weather]).to have_key(:uvi)
       expect(attrs[:current_weather][:uvi]).to be_a(Float)
+
+      expect(attrs).to_not have_key(:localtime_epoch)
 
       expect(attrs).to have_key(:daily_weather)
       expect(attrs[:daily_weather]).to be_an(Array)
