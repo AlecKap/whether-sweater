@@ -1,4 +1,4 @@
-class BookFacade
+class BookFacade < ForecastFacade
   def initialize(location, quantity)
     @location = location
     @quantity = quantity.to_i
@@ -40,31 +40,11 @@ class BookFacade
 
   private
 
-  def lat_long
-    "#{map_data[:results][0][:locations][0][:latLng][:lat]},#{map_data[:results][0][:locations][0][:latLng][:lng]}"
-  end
-
   def service
     @_book_service ||= OpenLibraryService.new
   end
 
   def books_data
     @_books_data ||= service.get_books_data(@location)
-  end
-
-  def map_service
-    @_map_service ||= MapquestService.new
-  end
-
-  def map_data
-    @_map_data ||= map_service.get_lat_long(@location)
-  end
-
-  def weather_service
-    @_weather_service ||= ForecastApiService.new
-  end
-
-  def weather_data(lat_long)
-    @_weather_data ||= weather_service.get_forecast(lat_long)
   end
 end
