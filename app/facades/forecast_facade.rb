@@ -58,7 +58,7 @@ class ForecastFacade
   end
 
   private
-
+  
   def map_service
     @_map_service ||= MapquestService.new
   end
