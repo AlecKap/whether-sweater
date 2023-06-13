@@ -105,5 +105,33 @@ RSpec.describe ForecastApiService do
         expect(results[:forecast][:forecastday][0][:hour][0]).to_not have_key(:precip_mm)
       end
     end
+
+    describe '#get_forecast_by_location_date_hour' do
+      it 'returns forecast data for a given location and hour', :vcr do
+        location = 'broomfield,co'
+        date = '2023-06-17'
+        hour = '12'
+
+        results = ForecastApiService.new.get_forecast_by_location_date_hour(location, date, hour)
+
+        expect(results).to be_a(Hash)
+        expect(results).to have_key(:location)
+        expect(results[:location]).to be_a(Hash)
+        expect(results[:location]).to have_key(:localtime)
+        expect(results[:location][:localtime]).to be_a(String)
+        expect(results).to have_key(:forecast)
+        expect(results[:forecast]).to be_a(Hash)
+        expect(results[:forecast]).to have_key(:forecastday)
+        expect(results[:forecast][:forecastday]).to be_an(Array)
+        expect(results[:forecast][:forecastday][0]).to have_key(:hour)
+        expect(results[:forecast][:forecastday][0][:hour]).to be_an(Array)
+        expect(results[:forecast][:forecastday][0][:hour][0]).to have_key(:temp_f)
+        expect(results[:forecast][:forecastday][0][:hour][0][:temp_f]).to be_a(Float)
+        expect(results[:forecast][:forecastday][0][:hour][0]).to have_key(:condition)
+        expect(results[:forecast][:forecastday][0][:hour][0][:condition]).to be_a(Hash)
+        expect(results[:forecast][:forecastday][0][:hour][0][:condition]).to have_key(:text)
+        expect(results[:forecast][:forecastday][0][:hour][0][:condition][:text]).to be_a(String)
+      end
+    end
   end
 end
