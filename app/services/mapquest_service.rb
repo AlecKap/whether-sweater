@@ -3,6 +3,10 @@ class MapquestService
     get_url("/geocoding/v1/address?location=#{location}")
   end
 
+  def get_road_trip_data(origin, destination)
+    get_url("/directions/v2/route?from=#{origin}&to=#{destination}")
+  end
+
   private
 
   def conn
